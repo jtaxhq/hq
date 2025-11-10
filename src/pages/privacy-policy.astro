@@ -1,0 +1,148 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Privacy Policy - Web Vitals Extension Enhanced';
+const description = 'Privacy policy for the Web Vitals Extension Enhanced. Zero tracking, zero data collection. All processing happens locally in your browser.';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<article class="content">
+				<h1>Privacy Policy - Web Vitals Extension Enhanced</h1>
+				
+				<p><strong>Effective Date:</strong> November 10, 2025</p>
+				<p><strong>Developer:</strong> jtax (jose@jtax.dev)</p>
+
+				<div class="highlight">
+					<strong>TL;DR:</strong> Zero tracking, zero data collection. API calls only when you open Server/DNS/SEO tabs. All processing happens locally in your browser.
+				</div>
+
+				<h2>Single Purpose Statement</h2>
+				<p>This extension provides comprehensive website performance, SEO, and infrastructure analysis by combining Core Web Vitals metrics with SEO analysis, domain authority estimation, security metrics, server geolocation and DNS record lookups. It allows developers and SEO professionals to analyze website performance, on-page optimization, hosting infrastructure, and DNS configuration without switching between multiple tools.</p>
+
+				<h2>Data Collection</h2>
+				<p>This extension collects <strong>zero user data</strong>. No personal information, browsing history, or user behavior is tracked, stored, or transmitted.</p>
+
+				<h2>How It Works</h2>
+
+				<h3>Web Vitals Tab</h3>
+				<ul>
+					<li>Metrics calculated locally in your browser using Chrome's Web Vitals API</li>
+					<li>No data sent to external servers</li>
+					<li>All processing happens on your device</li>
+				</ul>
+
+				<h3>SEO Tab</h3>
+				<ul>
+					<li>Only activated when you manually open this tab</li>
+					<li>SEO Score calculated locally by analyzing page elements (meta tags, headings, images, links)</li>
+					<li>Domain Authority and Domain Rating estimated locally based on domain characteristics</li>
+					<li>Security Score obtained from Mozilla Observatory API (sends only the domain name)</li>
+					<li>All on-page analysis happens locally - no page content is transmitted externally</li>
+					<li>Only domain name is sent to Mozilla Observatory for security header analysis</li>
+				</ul>
+
+				<h3>Server Info Tab</h3>
+				<ul>
+					<li>Only activated when you manually open this tab</li>
+					<li>Sends only the domain name to ipwhois.app API for geolocation lookup</li>
+					<li>No personal data or browsing history transmitted</li>
+					<li>Response displayed directly to you and not stored</li>
+				</ul>
+
+				<h3>DNS Info Tab</h3>
+				<ul>
+					<li>Only activated when you manually open this tab</li>
+					<li>Queries Google's public DNS API with only the domain name</li>
+					<li>No personal data or browsing history transmitted</li>
+					<li>Response displayed directly to you and not stored</li>
+				</ul>
+
+				<h2>Third-Party API Services</h2>
+				<p>This extension uses three free public APIs:</p>
+				<ul>
+					<li><strong>Mozilla Observatory</strong> - Security headers and HTTPS configuration analysis</li>
+					<li><strong>ipwhois.app</strong> - Server geolocation data</li>
+					<li><strong>Google DNS API</strong> - DNS record lookups</li>
+				</ul>
+				<p>All services receive only the domain name being analyzed. No page content, personal data, or browsing history is transmitted. Review their privacy policies:</p>
+				<ul>
+					<li>Mozilla Observatory: <a href="https://observatory.mozilla.org/" target="_blank" rel="noopener noreferrer">https://observatory.mozilla.org/</a></li>
+					<li>ipwhois.app: <a href="https://ipwhois.io/privacy" target="_blank" rel="noopener noreferrer">https://ipwhois.io/privacy</a></li>
+					<li>Google DNS: <a href="https://developers.google.com/speed/public-dns/privacy" target="_blank" rel="noopener noreferrer">https://developers.google.com/speed/public-dns/privacy</a></li>
+				</ul>
+
+				<h2>What We Don't Do</h2>
+				<ul>
+					<li>No tracking or analytics</li>
+					<li>No cookies</li>
+					<li>No user accounts or authentication</li>
+					<li>No data storage or logging</li>
+					<li>No personal information collection</li>
+					<li>No browsing history access</li>
+					<li>No sale, transfer, or sharing of any data with third parties</li>
+				</ul>
+
+				<h2>Permission Justifications</h2>
+
+				<h3>tabs</h3>
+				<p>Required to access the current tab's URL to display the domain name in the extension popup and to measure Web Vitals performance metrics and SEO elements for the active webpage.</p>
+
+				<h3>storage</h3>
+				<p>Required to save user preferences for the extension interface (such as selected tab view) locally in the browser. No data is sent externally. All storage is local to your device.</p>
+
+				<h3>activeTab</h3>
+				<p>Required to read the current webpage's URL and inject Web Vitals measurement scripts and SEO analysis code to calculate performance metrics (LCP, CLS, INP, FCP, TTFB) and analyze on-page SEO elements (meta tags, headings, images, structured data) on the active tab only.</p>
+
+				<h3>scripting</h3>
+				<p>Required to inject Web Vitals measurement code and SEO analysis scripts into the active webpage to collect performance metrics and analyze page elements. Scripts only execute on the current tab and only measure/analyze data locally. No page content is transmitted externally.</p>
+
+				<h3>Host Permissions (*://*/)</h3>
+				<p>Required to measure Web Vitals and analyze SEO on any website the user visits, and to make API calls to Mozilla Observatory, ipwhois.app and Google DNS for security, server and DNS information lookups. The extension only accesses sites when actively opened by the user.</p>
+
+				<h2>Remote Code Usage</h2>
+				<p><strong>This extension does NOT use remote code.</strong></p>
+				<p>All JavaScript code is included in the extension package. The extension makes HTTPS API calls to Mozilla Observatory, ipwhois.app and Google DNS APIs to fetch security headers, server geolocation and DNS records, but these are data requests, not code execution. No external JavaScript files are loaded or executed. No eval() or similar dynamic code execution is used.</p>
+
+				<h2>Data Transfers</h2>
+				<p>I certify that:</p>
+				<ul>
+					<li>I do not sell or transfer user data to third parties</li>
+					<li>I do not use or transfer user data for purposes unrelated to the extension's single purpose</li>
+					<li>I do not use or transfer user data to determine creditworthiness or for lending purposes</li>
+				</ul>
+
+				<h2>Data Storage and Retention</h2>
+				<p>All data is ephemeral and exists only while the extension popup is open. When you close the popup, everything is cleared from memory. The only persistent data is user interface preferences stored locally via chrome.storage.local.</p>
+				
+				<p><strong>SEO Analysis Data:</strong> All SEO scoring, domain authority estimation, and trust score calculations happen locally in your browser. Only the domain name is sent to Mozilla Observatory for security header analysis. No page content, meta descriptions, titles, or any other on-page elements are transmitted externally.</p>
+
+				<h2>Open Source</h2>
+				<p>This extension is open source. You can inspect all code at the GitHub repository to verify these privacy claims.</p>
+
+				<h2>Changes to This Policy</h2>
+				<p>If this policy changes, the effective date will be updated. Continued use of the extension constitutes acceptance of any changes.</p>
+
+				<h2>Your Rights and Control</h2>
+				<p>You have complete control over this extension. Uninstall it anytime from chrome://extensions and all functionality stops immediately. No data persists after uninstallation.</p>
+
+				<h2>Contact</h2>
+				<p>Questions or concerns? Email me at <a href="mailto:jose@jtax.dev">jose@jtax.dev</a></p>
+
+				<hr>
+				<p class="footer-text">
+					Last updated: November 10, 2025 | Web Vitals Extension Enhanced by jtax
+				</p>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
